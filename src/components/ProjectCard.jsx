@@ -1,28 +1,37 @@
-const ProjectCard = ({ project }) => {
+import { motion } from "framer-motion";
+
+const ProjectCard = ({ project, index }) => {
   return (
-    <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 group flex flex-col">
-      {/* IMAGE PLACEHOLDER */}
-      <div className="aspect-[16/10] bg-white/10 overflow-hidden relative border-b border-white/5">
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
-          <span className="font-mono text-[10px] uppercase tracking-widest mb-2">Project Preview</span>
-          <div className="w-12 h-[1px] bg-white/20"></div>
-        </div>
-        {/* TECH OVERLAY */}
-        <div className="absolute bottom-4 left-4 flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
-          {project.tech?.map((t, i) => (
-            <span key={i} className="bg-black/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-white/70 border border-white/10 uppercase tracking-wider">
-              {t}
-            </span>
-          ))}
-        </div>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="group bg-[#0A0A0A] border border-white/5 rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 flex flex-col h-full shadow-2xl"
+    >
+      {/* IMAGE CONTAINER */}
+      <div className="relative aspect-video overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
       </div>
 
       {/* CONTENT */}
-      <div className="p-8 flex-1 flex flex-col">
-        <h3 className="text-2xl font-black mb-3 group-hover:text-blue-400 transition-colors tracking-tighter">
+      <div className="p-8 flex flex-col flex-grow">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono uppercase tracking-widest text-white/50">
+            {project.subtitle}
+          </span>
+        </div>
+
+        <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 font-sans italic group-hover:text-blue-500 transition-colors">
           {project.title}
         </h3>
-        <p className="text-white/40 text-sm mb-10 line-clamp-2 leading-relaxed flex-1">
+
+        <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow lowercase font-sans">
           {project.description}
         </p>
         
@@ -54,7 +63,7 @@ const ProjectCard = ({ project }) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

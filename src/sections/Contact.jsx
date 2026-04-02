@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
@@ -14,7 +15,13 @@ const Contact = () => {
       id="contact"
       className="py-28 px-6 bg-black text-white border-t border-white/10"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="max-w-4xl mx-auto text-center"
+      >
 
         {/* HEADLINE */}
         <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase font-sans">
@@ -44,7 +51,7 @@ const Contact = () => {
           </button>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };

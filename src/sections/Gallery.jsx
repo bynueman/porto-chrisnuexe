@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Gallery = () => {
   const items = [
     { id: 1, title: "Foodie Journey", category: "Social Media Management", image: null },
@@ -13,17 +15,29 @@ const Gallery = () => {
 
   return (
     <section id="gallery" className="py-28 bg-black overflow-hidden border-t border-white/10">
-      <div className="px-6 lg:px-20 mb-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+        className="px-6 lg:px-20 mb-12"
+      >
         <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter uppercase font-sans">
           Visual <span className="text-white/30">Showcase</span>
         </h2>
         <p className="text-gray-400 font-mono text-sm uppercase tracking-widest">
-          Seksi ini fokus pada Social Media Management & Brand Strategy
+          This section highlights selected visual work, including social media content, brand visuals, and design explorations.
         </p>
-      </div>
+      </motion.div>
 
       {/* MARQUEE CONTAINER */}
-      <div className="relative flex overflow-hidden group/marquee">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="relative flex overflow-hidden group/marquee"
+      >
         <div className="flex animate-marquee group-hover/marquee:[animation-play-state:paused] whitespace-nowrap gap-6 py-4">
           {displayItems.map((item, idx) => (
             <div 
@@ -46,7 +60,7 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marquee {

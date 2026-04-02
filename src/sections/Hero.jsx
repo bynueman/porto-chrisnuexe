@@ -1,4 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
+
+const Counter = ({ value, duration = 2, delay = 0 }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(count, value, { 
+        duration, 
+        delay,
+        ease: "easeOut" 
+      });
+      return controls.stop;
+    } else {
+      count.set(0);
+    }
+  }, [inView, value, duration, delay, count]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+};
 
 const Hero = () => {
   const [copied, setCopied] = useState(false);
@@ -21,10 +44,22 @@ const Hero = () => {
       {/* GRID OVERLAY */}
       <div className="absolute inset-0 -z-10 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      <div className="max-w-6xl mx-auto w-full">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-6xl mx-auto w-full"
+      >
 
         {/* AVAILABILITY & LOCATION TAG */}
-        <div className="mb-8 flex flex-wrap gap-4">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mb-8 flex flex-wrap gap-4"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-white/10 rounded-full text-[10px] uppercase tracking-widest font-mono text-gray-400 bg-white/5 backdrop-blur-sm">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span>
             Open to On-site, Remote, & Hybrid
@@ -36,22 +71,40 @@ const Hero = () => {
             </svg>
             Bantul, Yogyakarta
           </div>
-        </div>
+        </motion.div>
 
         {/* HEADLINE */}
-        <h1 className="text-[clamp(48px,10vw,110px)] font-black tracking-tighter leading-[0.9] mb-8 uppercase font-sans">
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+          className="text-[clamp(48px,10vw,110px)] font-black tracking-tighter leading-[0.9] mb-8 uppercase font-sans"
+        >
           Creative <br />
           <span className="text-white/30">Developer &</span> <br />
           Product <span className="text-white/30">Builder.</span>
-        </h1>
+        </motion.h1>
 
         {/* SUBHEADLINE */}
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed lowercase font-sans">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed lowercase font-sans"
+        >
           creative-technical hybrid specializing in building internal business systems and high-impact visual branding — from functional dashboards to strategic digital content.
-        </p>
+        </motion.p>
         
         {/* CTA BUTTONS */}
-        <div className="flex flex-wrap gap-5">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="flex flex-wrap gap-5"
+        >
           <a
             href="#projects"
             className="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all duration-300 active:scale-95 font-sans uppercase text-[10px] tracking-[0.2em] shadow-[0_20px_50px_rgba(255,255,255,0.1)]"
@@ -73,24 +126,42 @@ const Hero = () => {
               </span>
             )}
           </button>
-        </div>
+        </motion.div>
 
         {/* QUICK STATS */}
-        <div className="grid grid-cols-2 sm:flex sm:gap-12 gap-8 mt-16 opacity-80 font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="grid grid-cols-2 sm:flex sm:gap-12 gap-8 mt-16 opacity-80 font-mono text-[11px] uppercase tracking-[0.2em] text-white/40"
+        >
           <div>
-            <span className="block text-3xl font-bold text-white mb-1">5+</span>
+            <span className="block text-3xl font-bold text-white mb-1 italic">
+              <Counter value={3} delay={1} />+
+            </span>
             Years Experience
           </div>
           <div>
-            <span className="block text-3xl font-bold text-white mb-1">5+</span>
+            <span className="block text-3xl font-bold text-white mb-1 italic">
+              <Counter value={5} delay={1.2} />+
+            </span>
             Projects
           </div>
            <div>
-            <span className="block text-3xl font-bold text-white mb-1">5+</span>
+            <span className="block text-3xl font-bold text-white mb-1 italic">
+              <Counter value={5} delay={1.4} />+
+            </span>
             Social Media Management
           </div>
-        </div>
-      </div>
+          <div>
+            <span className="block text-3xl font-bold text-white mb-1 italic">
+              <Counter value={100} delay={1.6} />+
+            </span>
+            Designs Distributed
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

@@ -1,14 +1,33 @@
+import { motion } from "framer-motion";
+
 const About = () => {
   return (
-    <section id="about" className="py-28 px-6 bg-black text-white border-t border-white/10">
+    <section id="about" className="py-24 px-6 bg-black text-white relative overflow-hidden">
       
-      <div className="max-w-4xl mx-auto">
+      {/* BACKGROUND DECOR */}
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[100px] -z-10" />
 
-        <h2 className="text-3xl md:text-5xl font-black mb-10 tracking-tighter uppercase font-sans">
-          About <span className="text-white/30">Me</span>
-        </h2>
+      <div className="max-w-6xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-12"
+        >
+          <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-white/40 mb-4">
+            Professional Profile
+          </h2>
+          <div className="h-px w-20 bg-blue-600 mb-8" />
+        </motion.div>
 
-        <div className="space-y-6 lowercase">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-6 lowercase"
+        >
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
             i am a <span className="text-white font-bold">creative-technical hybrid</span> with over 5+ years of commercial experience spanning from international freelance production to high-level digital leadership.
           </p>
@@ -20,8 +39,7 @@ const About = () => {
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
             from automating manual billing workflows to lead-creative direction for organizations, i build systems that are not just "features" — but cohesive, functional solutions for real-world operational challenges.
           </p>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
