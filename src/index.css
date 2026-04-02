@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080910;
+  --white: #F5F5F8;
+  --font-d: 'Cabinet Grotesk', sans-serif;
+  --font-m: 'Geist Mono', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+  }
+  
+  body {
+    font-family: var(--font-d);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--white);
+    background-color: var(--bg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-black;
+  }
+
+  p {
+    @apply text-white/70 leading-relaxed;
+  }
+}

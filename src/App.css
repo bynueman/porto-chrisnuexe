@@ -1,0 +1,29 @@
+/* Global Styles */
+:root {
+  --accent: #ffffff;
+  --accent-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  @apply bg-black text-white antialiased;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
