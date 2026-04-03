@@ -26,18 +26,25 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-6 lowercase"
+          className="space-y-8"
         >
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            i am a <span className="text-white font-bold">creative-technical hybrid</span> with over 5+ years of commercial experience spanning from international freelance production to high-level digital leadership.
+          <p className="text-white text-2xl md:text-4xl font-bold leading-tight tracking-tighter max-w-4xl italic">
+            I build business systems that <span className="text-blue-500">solve real operational problems.</span>
           </p>
 
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            having served as a <span className="text-white">creative chief officer (cco)</span>, i bridge the gap between aesthetics and function: building robust web systems using <span className="text-white">PHP/JavaScript</span> while maintaining a sharp, unified brand identity across all platforms.
-          </p>
+          <div className="grid md:grid-cols-2 gap-10">
+            <p className="text-gray-400 text-lg leading-relaxed">
+              With <span className="text-white">5+ years of experience</span> across freelance projects and digital production, I work across both design and development, creating systems that are not only functional, but <span className="text-white font-bold">actually used.</span>
+            </p>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              I’ve led creative direction and built web-based systems using <span className="text-white font-bold">PHP and JavaScript</span>, focusing on financial tracking, dashboards, and workflow automation.
+            </p>
+          </div>
 
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            from automating manual billing workflows to lead-creative direction for organizations, i build systems that are not just "features" — but cohesive, functional solutions for real-world operational challenges.
+          <div className="h-px w-full bg-white/5 my-4" />
+
+          <p className="text-gray-400 text-lg leading-relaxed max-w-3xl">
+            From automating manual billing processes to structuring internal tools, I focus on building solutions that <span className="text-white">improve clarity, efficiency, and day-to-day operations.</span> Beyond development, I manage the <span className="text-white">full deployment lifecycle on Ubuntu VPS</span> using <span className="text-white font-bold">Termius</span>, ensuring every system I build is production-ready.
           </p>
         </motion.div>
       </div>

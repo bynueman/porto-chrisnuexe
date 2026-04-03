@@ -78,15 +78,15 @@ const Navbar = () => {
             ))}
             <button
               onClick={handleCopy}
-              className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300 relative overflow-hidden group ${
-                copied ? 'bg-green-600 text-white' : 'bg-white/10 border border-white/10 text-white hover:bg-white hover:text-black'
+              className={`px-5 py-2 rounded-lg text-xs font-bold transition-all duration-300 relative overflow-hidden group ${
+                copied ? 'bg-green-600 text-white' : 'bg-white/10 border border-white/10 text-white hover:bg-white hover:text-black uppercase tracking-wider'
               }`}
             >
               <span className={copied ? 'opacity-0' : 'opacity-100 transition-opacity'}>
-                Hire Me
+                Copy Email
               </span>
               {copied && (
-                <span className="absolute inset-0 flex items-center justify-center text-[10px] animate-in fade-in zoom-in duration-300">
+                <span className="absolute inset-0 flex items-center justify-center text-[10px] animate-in fade-in zoom-in duration-300 uppercase">
                   Copied!
                 </span>
               )}
@@ -112,13 +112,13 @@ const Navbar = () => {
           isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-full pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center gap-8 px-6 text-center">
+        <div className="flex flex-col items-center gap-6 px-6 text-center">
           {navLinks.map((link, idx) => (
             <a
               key={link.name}
               href={link.href}
               onClick={handleLinkClick}
-              className={`text-5xl font-black tracking-tighter text-white/80 hover:text-white transition-all duration-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+              className={`text-3xl sm:text-5xl font-black tracking-tighter text-white/80 hover:text-white transition-all duration-300 uppercase ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               {link.name}
@@ -128,12 +128,12 @@ const Navbar = () => {
           <div className={`mt-8 transition-all duration-500 delay-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <button
               onClick={handleCopy}
-              className={`px-12 py-5 rounded-2xl text-lg font-black transition-transform active:scale-95 shadow-[0_20px_50px_rgba(255,255,255,0.1)] relative overflow-hidden group ${
+              className={`px-12 py-5 rounded-2xl text-lg font-black transition-transform active:scale-95 shadow-[0_20px_50px_rgba(255,255,255,0.1)] relative overflow-hidden group uppercase tracking-widest ${
                 copied ? 'bg-green-600 text-white' : 'bg-white text-black hover:bg-gray-200'
               }`}
             >
               <span className={copied ? 'opacity-0' : 'opacity-100 transition-opacity'}>
-                Hire Me Now
+                Copy Email
               </span>
               {copied && (
                 <span className="absolute inset-0 flex items-center justify-center text-sm animate-in fade-in zoom-in duration-300">

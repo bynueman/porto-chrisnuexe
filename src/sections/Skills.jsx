@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Skills = () => {
   const skillGroups = [
     {
-      title: "Desain Grafis",
+      title: "Graphic Design",
       color: "text-blue-400",
       bar: "bg-blue-500",
       skills: [
@@ -20,11 +20,14 @@ const Skills = () => {
       skills: [
         { name: "React", icon: "react" },
         { name: "Laravel", icon: "laravel" },
+        { name: "Filament", icon: "filamentphp" },
         { name: "Tailwind CSS", icon: "tailwindcss" },
         { name: "Vite", icon: "vite" },
         { name: "PHP", icon: "php" },
         { name: "JavaScript", icon: "javascript" },
         { name: "WordPress", icon: "wordpress" },
+        { name: "Ubuntu", icon: "ubuntu" },
+        { name: "Termius", icon: "termius" },
         { name: "GitHub", icon: "github" }
       ]
     },

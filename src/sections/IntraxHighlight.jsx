@@ -1,3 +1,5 @@
+import intraxCover from "../assets/projects/intrax/intrax.png";
+
 const IntraxHighlight = () => {
   return (
     <section id="intrax" className="py-28 px-6 lg:px-20 bg-[#080910] border-t border-white/5 relative overflow-hidden">
@@ -23,15 +25,15 @@ const IntraxHighlight = () => {
           </h2>
 
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl">
-            Sistem pembukuan keuangan cerdas berbasis AI yang terintegrasi dengan Telegram. 
-            <strong> Menghilangkan kerumitan input manual</strong> dengan deteksi otomatis dari struk belanja, pesan teks, hingga voice note.
+            AI-powered smart financial bookkeeping system integrated with Telegram. 
+            <strong> Eliminates manual input hassle</strong> with automatic detection from receipts, text messages, and voice notes.
           </p>
 
           <div className="flex flex-col gap-6 mb-12">
             {[
-              { title: "AI-Powered Parsing", desc: "Mendeteksi nominal, kategori, dan dompet secara otomatis." },
-              { title: "Dashboard Real-time", desc: "Analisis pengeluaran mendalam dengan UI yang sangat responsif." },
-              { title: "Multi-Platform Input", desc: "Input transaksi via Telegram dari mana saja, kapan saja." }
+              { title: "AI-Powered Parsing", desc: "Automatically detects amounts, categories, and wallets." },
+              { title: "Real-time Dashboard", desc: "Deep expense analysis with a highly responsive UI." },
+              { title: "Multi-Platform Input", desc: "Log transactions via Telegram from anywhere, anytime." }
             ].map((item, i) => (
               <div key={i} className="flex gap-4 group">
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(79,142,244,1)]" />
@@ -44,10 +46,12 @@ const IntraxHighlight = () => {
           </div>
 
           <a 
-            href="#" 
+            href="https://intrax.web.id" 
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-4 bg-white/5 border border-white/10 px-8 py-4 rounded-lg font-bold text-sm hover:bg-blue-500 hover:border-blue-500 transition-all group"
           >
-            Pelajari Sistem Ini <span className="group-hover:translate-x-2 transition-transform">→</span>
+            Explore This System <span className="group-hover:translate-x-2 transition-transform">→</span>
           </a>
         </div>
 
@@ -61,15 +65,17 @@ const IntraxHighlight = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
             </div>
             
-            {/* MOCKUP PLACEHOLDER */}
-            <div className="aspect-video bg-[#1a1c2e] p-8 flex flex-col items-center justify-center relative overflow-hidden">
-              <div className="w-full h-full border border-dashed border-white/5 rounded-lg flex items-center justify-center text-white/5 font-black text-6xl italic tracking-tighter uppercase p-10 text-center">
-                INTRAX DASHBOARD UI
-              </div>
+            {/* MOCKUP IMAGE */}
+            <div className="aspect-video relative overflow-hidden group">
+              <img 
+                src={intraxCover} 
+                alt="Intrax Dashboard Mockup" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f1a] via-transparent to-transparent opacity-60" />
               
               {/* ACCENT SHAPES */}
               <div className="absolute top-10 right-10 w-24 h-1 bg-blue-500 rounded shadow-[0_0_15px_rgba(79,142,255,0.8)]" />
-              <div className="absolute bottom-10 left-10 w-16 h-16 border border-blue-500/20 rounded-full animate-ping" />
             </div>
           </div>
         </div>

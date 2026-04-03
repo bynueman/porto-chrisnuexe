@@ -2,22 +2,22 @@ const Experience = () => {
   const experiences = [
     {
       company: "Hubungins",
-      period: "MEI 2025 – JAN 2026",
+      period: "MAY 2025 – JAN 2026",
       role: "WEB DEVELOPER",
       points: [
-        "Membangun landing page dari nol menggunakan JavaScript — fokus pada arsitektur, desain responsif, dan optimasi performa.",
-        "Mengembangkan sistem invoice internal (PHP) yang menggantikan proses penagihan manual sepenuhnya.",
-        "Mengelola 2 repositori GitHub aktif dengan codebase yang bersih dan mudah dipelihara."
+        "Built landing pages from scratch using JavaScript — focusing on architecture, responsive design, and performance optimization.",
+        "Developed an internal invoice system (PHP) that fully replaced manual billing processes.",
+        "Managed 2 active GitHub repositories with a clean and maintainable codebase."
       ]
     },
     {
       company: "Unteyo Journey",
-      period: "OKT 2024 – JAN 2026",
+      period: "OCT 2024 – JAN 2026",
       role: "CREATIVE CHIEF OFFICER (CCO)",
       points: [
-        "Menetapkan standar visual seluruh organisasi, pedoman desain, dan kebijakan kualitas konten.",
-        "Menyetujui setiap aset kreatif sebelum publikasi — menjaga identitas brand yang konsisten di semua saluran.",
-        "Turut mendesain dan merancang arsitektur website Unteyo Journey dari konsep hingga implementasi visual."
+        "Established organization-wide visual standards, design guidelines, and content quality policies.",
+        "Approved every creative asset before publication — maintaining a consistent brand identity across all channels.",
+        "Co-designed and architected the Unteyo Journey website from concept to visual implementation."
       ]
     },
     {
@@ -25,26 +25,26 @@ const Experience = () => {
       period: "FEB 2025 – JUL 2025",
       role: "GRAPHIC DESIGNER (FREELANCE)",
       points: [
-        "Mengirimkan aset desain garmen siap produksi secara remote dengan siklus revisi minimal."
+        "Delivered production-ready garment design assets remotely with minimal revision cycles."
       ]
     },
     {
       company: "International Freelance",
-      period: "DES 2019 – JAN 2025",
-      role: "GRAPHIC DESIGNER · 5 TAHUN",
+      period: "DEC 2019 – JAN 2025",
+      role: "GRAPHIC DESIGNER · 5 YEARS",
       points: [
-        "Membangun praktik desain independen selama 5 tahun melayani klien internasional melalui platform kreatif global.",
-        "Menerapkan strategi SEO pada aset kreatif — menghasilkan akuisisi klien organik yang konsisten selama bertahun-tahun.",
-        "Memberikan desain media sosial, materi pemasaran, dan file siap cetak di berbagai industri dan negara."
+        "Built an independent design practice for 5 years serving international clients through global creative platforms.",
+        "Implemented SEO strategies on creative assets — resulting in consistent organic client acquisition over the years.",
+        "Provided social media designs, marketing materials, and print-ready files across various industries and countries."
       ]
     },
     {
       company: "Indokonveksi",
-      period: "AGU 2019 – OKT 2021",
+      period: "AUG 2019 – OCT 2021",
       role: "GRAPHIC DESIGNER (FULL-TIME)",
       points: [
-        "Mendesain grafis garmen di berbagai lini produk — berkontribusi langsung pada efisiensi produksi.",
-        "Menerjemahkan brief klien ke dalam file siap cetak dengan revisi minimal, meminimalkan kesalahan produksi."
+        "Designed garment graphics across various product lines — directly contributing to production efficiency.",
+        "Translated client briefs into print-ready files with minimal revisions, minimizing production errors."
       ]
     }
   ];
@@ -55,7 +55,7 @@ const Experience = () => {
       {/* SECTION LABEL */}
       <div className="flex items-center gap-3 font-mono text-[10px] text-blue-500 uppercase tracking-[0.2em] mb-14">
         <span className="w-5 h-[1px] bg-blue-500 shadow-[0_0_10px_rgba(79,142,255,0.5)]"></span>
-        05 — Rekam Jejak
+        05 — Track Record
       </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.6fr] gap-20 items-start">
@@ -66,16 +66,16 @@ const Experience = () => {
             Real work.<br /> <span className="text-grad">Real delivery.</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed max-w-sm">
-            Bukan sekadar project sampingan — 
-            <strong>peran profesional, klien nyata, deadline nyata.</strong> 
-            Lima tahun di berbagai bidang desain, development, dan kepemimpinan kreatif.
+            Not just side projects — 
+            <strong>professional roles, real clients, real deadlines.</strong> 
+            Five years across design, development, and creative leadership fields.
           </p>
         </div>
 
         {/* RIGHT CONTENT: EXPERIENCE LIST */}
-        <div className="flex flex-col gap-[2px] opacity-0 animate-[fadeSlideUp_0.8s_0.2s_ease_forwards]">
+        <div className="flex flex-col gap-2 md:gap-[2px] opacity-0 animate-[fadeSlideUp_0.8s_0.2s_ease_forwards]">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="group relative bg-white/[0.03] border border-white/5 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:bg-blue-500/[0.02] hover:border-blue-500/10">
+            <div key={idx} className="group relative bg-white/[0.03] border border-white/5 p-6 md:p-8 rounded-lg overflow-hidden transition-all duration-300 hover:bg-blue-500/[0.02] hover:border-blue-500/10">
               {/* HOVER ACCENT */}
               <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-transparent group-hover:bg-blue-500 transition-colors duration-300"></div>
               

@@ -3,22 +3,22 @@ const Vision = () => {
     {
       icon: "🎨",
       title: "Motion & 3D design",
-      desc: "Menjelajahi dunia motion graphics dan 3D — lapisan berikutnya dari karya visual bernilai tinggi yang jarang disentuh desainer tradisional."
+      desc: "Exploring the world of motion graphics and 3D — the next layer of high-value visual work rarely touched by traditional designers."
     },
     {
       icon: "⛓️",
       title: "Blockchain & Web3",
-      desc: "Platform desentralisasi membutuhkan desainer yang juga paham kode. Saya memposisikan diri di persimpangan itu — di mana nilai kreasi paling tinggi."
+      desc: "Decentralized platforms need designers who also understand code. I position myself at that intersection — where creation value is highest."
     },
     {
       icon: "🚀",
       title: "Fullstack product builder",
-      desc: "Berkembang dari pembangun fitur menjadi arsitek produk — menguasai tumpukan teknologi lebih dalam, dari skema database hingga interface yang halus."
+      desc: "Evolving from feature building to product architecture — mastering deeper tech stacks from database schemas to polished interfaces."
     },
     {
       icon: "🌏",
       title: "Global creative-tech roles",
-      desc: "Remote-first, terhubung secara global. Saya telah bekerja dengan klien internasional — saya didesain untuk kolaborasi lintas batas."
+      desc: "Remote-first, globally connected. Having worked with international clients — I am designed for cross-border collaboration."
     }
   ];
 
@@ -28,7 +28,7 @@ const Vision = () => {
       {/* SECTION LABEL */}
       <div className="flex items-center gap-3 font-mono text-[10px] text-blue-500 uppercase tracking-[0.2em] mb-14">
         <span className="w-5 h-[1px] bg-blue-500 shadow-[0_0_10px_rgba(79,142,255,0.5)]"></span>
-        06 — Visi
+        06 — Vision
       </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
@@ -40,9 +40,9 @@ const Vision = () => {
             <span className="font-serif italic font-normal text-blue-500 pr-4 lowercase">what's next.</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed max-w-lg mb-8">
-            Saya tidak mengejar tren — saya membangun masa depan di mana 
-            <strong> desain dan teknologi bersatu</strong> dengan cara yang belum sepenuhnya dijelajahi. 
-            Roadmap saya disengaja: memperdalam skill teknis, menjelajahi platform desentralisasi, dan membangun produk yang berarti.
+            I don't follow trends — I build a future where 
+            <strong> design and technology unite</strong> in ways that haven't been fully explored yet. 
+            My roadmap is intentional: deepening technical skills, exploring decentralized platforms, and building meaningful products.
           </p>
         </div>
 

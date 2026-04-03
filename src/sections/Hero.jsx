@@ -82,20 +82,51 @@ const Hero = () => {
           className="text-[clamp(48px,10vw,110px)] font-black tracking-tighter leading-[0.9] mb-8 uppercase font-sans"
         >
           Creative <br />
-          <span className="text-white/30">Developer &</span> <br />
-          Product <span className="text-white/30">Builder.</span>
+          <span className="text-white/30">Design</span> <br />
+          & Code
         </motion.h1>
 
-        {/* SUBHEADLINE */}
+        {/* SUBHEADLINE / BIO */}
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed lowercase font-sans"
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed font-sans"
         >
-          creative-technical hybrid specializing in building internal business systems and high-impact visual branding — from functional dashboards to strategic digital content.
+          <span className="text-white font-bold">Chrisnu Firmansyah</span> — Graphic Designer • Visual Content Creator • Web Developer. 5+ years of experience building visual assets and technically implementing them into digital products.
         </motion.p>
+
+        {/* SOCIAL LINKS */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="flex gap-4 mb-14"
+        >
+          {[
+            { name: "LinkedIn", icon: "https://unpkg.com/simple-icons@v11/icons/linkedin.svg", href: "https://www.linkedin.com/in/chrisnu-firmansyah" },
+            { name: "GitHub", icon: "https://unpkg.com/simple-icons@v11/icons/github.svg", href: "https://github.com/bynueman" },
+            { name: "Email", icon: "https://unpkg.com/simple-icons@v11/icons/gmail.svg", href: "mailto:chrisnufirmans30@gmail.com" },
+            { name: "Instagram", icon: "https://unpkg.com/simple-icons@v11/icons/instagram.svg", href: "https://instagram.com/chrisnuexe" }
+          ].map((social) => (
+            <a 
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white hover:border-white transition-all group shadow-xl"
+              title={social.name}
+            >
+              <img 
+                src={social.icon} 
+                alt={social.name}
+                className="w-5 h-5 opacity-80 invert group-hover:opacity-100 group-hover:invert-0 transition-all"
+              />
+            </a>
+          ))}
+        </motion.div>
         
         {/* CTA BUTTONS */}
         <motion.div 
