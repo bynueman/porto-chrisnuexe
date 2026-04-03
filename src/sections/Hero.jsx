@@ -62,7 +62,7 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-white/10 rounded-full text-[10px] uppercase tracking-widest font-mono text-gray-400 bg-white/5 backdrop-blur-sm">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span>
-            Open to On-site, Remote, & Hybrid
+            Open to On-site, Remote, or Hybrid
           </div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-white/10 rounded-full text-[10px] uppercase tracking-widest font-mono text-gray-400 bg-white/5 backdrop-blur-sm">
             <svg className="w-3 h-3 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">

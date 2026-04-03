@@ -60,9 +60,16 @@ const Navbar = () => {
         <div className="max-w-6xl mx-auto flex justify-between items-center relative z-[1002]">
           
           {/* LOGO */}
-          <a href="#home" className="text-lg sm:text-xl font-bold tracking-tighter flex items-center gap-2 group shrink-0">
-            <span className="bg-white text-black px-2 py-0.5 rounded text-lg transition-transform group-hover:scale-110">C</span>
-            <span className="opacity-80 group-hover:opacity-100 transition-opacity xs:hidden">Portfolio</span>
+          <a href="#home" className="flex items-center gap-3 group shrink-0 relative">
+            <div className="relative">
+              <span className="bg-white text-black px-3 py-1 rounded-xl text-xl font-black transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 block shadow-[0_10px_30px_rgba(255,255,255,0.2)]">
+                C
+              </span>
+              <div className="absolute inset-0 bg-white/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+            </div>
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300">
+              Portfolio
+            </span>
           </a>
 
           {/* DESKTOP NAV */}

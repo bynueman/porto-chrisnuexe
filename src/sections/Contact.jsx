@@ -30,7 +30,7 @@ const Contact = () => {
 
         {/* SUBTEXT */}
         <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed lowercase font-sans">
-          Open to on-site, remote, and hybrid opportunities — building web systems, dashboards, and digital products that drive real operational impact.
+          Open to on-site, remote, or hybrid opportunities — building web systems, dashboards, and digital products that drive real operational impact.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
